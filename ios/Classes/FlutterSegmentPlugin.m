@@ -3,6 +3,7 @@
 #import <Analytics/SEGContext.h>
 #import <Analytics/SEGMiddleware.h>
 #import <Segment_Branch/BNCBranchIntegrationFactory.h>
+#import <Segment-Firebase/SEGFirebaseIntegrationFactory.h>
 
 @implementation FlutterSegmentPlugin
 // Contents to be appended to the context
@@ -15,6 +16,7 @@ static NSDictionary *_appendToContextMiddleware;
     NSString *writeKey = [dict objectForKey: @"com.claimsforce.segment.WRITE_KEY"];
     BOOL trackApplicationLifecycleEvents = [[dict objectForKey: @"com.claimsforce.segment.TRACK_APPLICATION_LIFECYCLE_EVENTS"] boolValue];
     BOOL isBranchIoIntegrationEnabled = [[dict objectForKey: @"com.claimsforce.segment.ENABLE_BRANCH_IO_INTEGRATION"] boolValue];
+    BOOL isFirebaseIntegrationEnabled = [[dict objectForKey: @"com.claimsforce.segment.ENABLE_FIREBASE_INTEGRATION"] boolValue];
     SEGAnalyticsConfiguration *configuration = [SEGAnalyticsConfiguration configurationWithWriteKey:writeKey];
 
     // This middleware is responsible for manipulating only the context part of the request,
@@ -105,6 +107,10 @@ static NSDictionary *_appendToContextMiddleware;
 
     if (isBranchIoIntegrationEnabled) {
       [configuration use:[BNCBranchIntegrationFactory instance]];
+    }
+
+    if (isFirebaseIntegrationEnabled) {
+      [config use:[SEGFirebaseIntegrationFactory instance]];
     }
 
     [SEGAnalytics setupWithConfiguration:configuration];
