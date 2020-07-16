@@ -2,7 +2,7 @@
 #import <Analytics/SEGAnalytics.h>
 #import <Analytics/SEGContext.h>
 #import <Analytics/SEGMiddleware.h>
-#import <Segment_Branch/BNCBranchIntegrationFactory.h>
+#import <Segment-Branch/BNCBranchIntegrationFactory.h>
 #import <Segment-Firebase/SEGFirebaseIntegrationFactory.h>
 
 @implementation FlutterSegmentPlugin
