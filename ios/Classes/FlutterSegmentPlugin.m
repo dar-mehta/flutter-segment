@@ -110,7 +110,7 @@ static NSDictionary *_appendToContextMiddleware;
     }
 
     if (isFirebaseIntegrationEnabled) {
-      [config use:[SEGFirebaseIntegrationFactory instance]];
+      [configuration use:[SEGFirebaseIntegrationFactory instance]];
     }
 
     [SEGAnalytics setupWithConfiguration:configuration];
