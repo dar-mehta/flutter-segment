@@ -73,6 +73,8 @@ Remember that the application lifecycle events won't have any special context se
 
 To enable [`branch.io`](https://help.branch.io/developers-hub/docs/plugins-overview) integration you need to configure `ENABLE_BRANCH_IO_INTEGRATION` as mentioned in the next section.
 
+To enable [`firebase`](https://segment.com/docs/connections/destinations/catalog/firebase/) integration you need to configure `ENABLE_FIREBASE_INTEGRATION` as mentioned in the next section.
+
 ### Android
 ```xml
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.example.flutter_segment_example">
@@ -83,6 +85,7 @@ To enable [`branch.io`](https://help.branch.io/developers-hub/docs/plugins-overv
         <meta-data android:name="com.claimsforce.segment.WRITE_KEY" android:value="YOUR_WRITE_KEY_GOES_HERE" />
         <meta-data android:name="com.claimsforce.segment.TRACK_APPLICATION_LIFECYCLE_EVENTS" android:value="false" />
         <meta-data android:name="com.claimsforce.segment.ENABLE_BRANCH_IO_INTEGRATION" android:value="false" />
+        <meta-data android:name="com.claimsforce.segment.ENABLE_FIREBASE_INTEGRATION" android:value="false" />
         <meta-data android:name="com.claimsforce.segment.DEBUG" android:value="false" />
     </application>
 </manifest>
@@ -100,6 +103,8 @@ To enable [`branch.io`](https://help.branch.io/developers-hub/docs/plugins-overv
 	<key>com.claimsforce.segment.TRACK_APPLICATION_LIFECYCLE_EVENTS</key>
 	<false/>
 	<key>com.claimsforce.segment.ENABLE_BRANCH_IO_INTEGRATION</key>
+	<false/>
+  <key>com.claimsforce.segment.ENABLE_FIREBASE_INTEGRATION</key>
 	<false/>
 	[...]
 </dict>
