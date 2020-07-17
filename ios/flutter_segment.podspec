@@ -19,5 +19,7 @@ A new flutter plugin project.
   s.dependency 'Segment-Branch'
   s.ios.deployment_target = '8.0'
 
+  s.weak_framework = 'AdSupport'
+
 end
 
