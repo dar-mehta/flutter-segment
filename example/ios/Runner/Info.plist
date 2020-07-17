@@ -40,7 +40,7 @@
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>com.claimsforce.segment.WRITE_KEY</key>
-	<string>YOUR_WRITE_KEY_GOES_HERE</string>
+	<string>elCkKkZPaXoW6F21JbC7CvYgo7X39tVb</string>
 	<key>com.claimsforce.segment.TRACK_APPLICATION_LIFECYCLE_EVENTS</key>
 	<false/>
 	<key>UIViewControllerBasedStatusBarAppearance</key>

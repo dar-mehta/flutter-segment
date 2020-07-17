@@ -3,6 +3,7 @@
 #import <Analytics/SEGContext.h>
 #import <Analytics/SEGMiddleware.h>
 #import <Segment-Branch/BNCBranchIntegrationFactory.h>
+#import <AdSupport/ASIdentifierManager.h>
 
 @implementation FlutterSegmentPlugin
 // Contents to be appended to the context
@@ -16,6 +17,13 @@ static NSDictionary *_appendToContextMiddleware;
     BOOL trackApplicationLifecycleEvents = [[dict objectForKey: @"com.claimsforce.segment.TRACK_APPLICATION_LIFECYCLE_EVENTS"] boolValue];
     BOOL isBranchIoIntegrationEnabled = [[dict objectForKey: @"com.claimsforce.segment.ENABLE_BRANCH_IO_INTEGRATION"] boolValue];
     SEGAnalyticsConfiguration *configuration = [SEGAnalyticsConfiguration configurationWithWriteKey:writeKey];
+
+    // Enable advertising collection
+    configuration.enableAdvertisingTracking = YES;
+    // Set the block to be called when the advertisingID is needed
+    configuration.adSupportBlock = ^{
+        return [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
+    };
 
     // This middleware is responsible for manipulating only the context part of the request,
     // leaving all other fields as is.
